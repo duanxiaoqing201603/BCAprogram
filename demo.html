@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" style="width:450px;">
+  <canvas id="canvas"></canvas>
+</div>
+
+<script src="Chart.min.js"></script>
+
+<script>
+  var $withd=document.getElementById("app").width  //获取父级的宽度
+  var canvas=document.getElementById("canvas") //赋宽度给canvas
+ /* canvas.height=$withd-50;
+  canvas.width=300;*/
+  console.log(canvas.width,canvas.height);
+  var ctx = document.getElementById("canvas").getContext("2d");
+  var myChart = new Chart(ctx, {
+    type: 'line', // line 表示是 曲线图，当然也可以设置其他的图表类型 如柱形图 : bar  或者其他
+    data: {
+      labels : ["China", "India", "United States", "Indonesia", "Brazil", "Pakistan", "Nigeria", "Bangladesh", "Russia", "Japan"], //按时间段 可以按星期，按月，按年
+      datasets : [
+        {
+          label: "123",  //当前数据的说明
+          fill: true,  //是否要显示数据部分阴影面积块  false:不显示
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)'],//数据曲线颜色
+          pointBackgroundColor: "#fff", //数据点的颜色
+          data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],  //填充的数据
+        }/*,
+        {
+          label: "456",  //当前数据的说明
+          fill: true,  //是否要显示数据部分阴影面积块  false:不显示
+          borderColor: "rgba(75,192,192,1)",//数据曲线颜色
+          pointBackgroundColor: "#fff", //数据点的颜色
+          data: [21, 34, 35, 50, 45, 21, 70],  //填充的数据
+        }*/
+      ]
+    }
+    /*type: 'line',
+    data: {
+      labels: ["China", "India", "United States", "Indonesia", "Brazil", "Pakistan", "Nigeria", "Bangladesh", "Russia", "Japan"],
+      datasets: [{
+        label: 'Population',
+        data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)'
+        ]
+      }]
+    }*/
+  });
+</script>
+ 
+</body>
+</html>
